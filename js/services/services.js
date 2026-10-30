@@ -45,3 +45,24 @@ async function loadCourses(){
 
     populateCourses(courseList);
 }
+
+//creating a course
+async function addCourse(courseTitle, courseNumber, courseStudentAmount){
+    console.log("Adding course to backend");
+    let newCourse = new Course(-1, courseTitle, courseNumber, courseStudentAmount);
+    let courseResponse = await makeAPICall(createCourse, "post", undefined, newCourse);
+    console.log(courseResponse);
+    if(courseResponse){
+        await loadCourses();
+    }
+}
+
+async function editCourse(id, courseTitle, courseNumber, courseStudentAmount){
+    console.log("Editing course to backend");
+    let editCourse = new Course(id, courseTitle, courseNumber, courseStudentAmount);
+    let courseResponse = await makeAPICall(updateCourse, "put", id, editCourse);
+    console.log(courseResponse);
+    if(courseResponse){
+        await loadCourses();
+    }
+}
