@@ -1,0 +1,290 @@
+
+/* =========================
+   GENERAL PAGE DESIGN
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f3f5f9;
+    color: #243247;
+    min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background-color: #172b4d;
+    color: white;
+    padding: 28px 8%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: 0.3px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+main {
+    max-width: 1150px;
+    margin: 55px auto;
+    padding: 0 25px;
+}
+
+main::before {
+    content: "Manage and organize your university courses";
+    display: block;
+    color: #718096;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   COURSE TABLE
+========================= */
+
+#mainTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(31, 45, 61, 0.07);
+}
+
+#mainTable thead {
+    background-color: #e9eef7;
+}
+
+#mainTable th {
+    text-align: left;
+    padding: 19px 20px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #425675;
+}
+
+#mainTable td {
+    padding: 17px 20px;
+    border-top: 1px solid #edf0f5;
+    font-size: 14px;
+}
+
+#mainTable tbody tr:nth-child(even) {
+    background-color: #f9fafd;
+}
+
+#mainTable tbody tr:hover {
+    background-color: #eef4ff;
+    transition: background-color 0.2s ease;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    background-color: #315cba;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 19px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #24488f;
+    transform: translateY(-1px);
+}
+
+.btn-open {
+    margin-top: 25px;
+    padding: 13px 22px;
+}
+
+.btn-close {
+    background: transparent;
+    border: none;
+    color: #718096;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-close:hover {
+    color: #d33d3d;
+}
+
+/* Table action buttons */
+
+#courseTableBody button {
+    border: none;
+    border-radius: 5px;
+    padding: 7px 12px;
+    margin-right: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#courseTableBody button:first-child {
+    background-color: #e5edff;
+    color: #315cba;
+}
+
+#courseTableBody button:first-child:hover {
+    background-color: #315cba;
+    color: white;
+}
+
+#courseTableBody button:last-child {
+    background-color: #ffe9e9;
+    color: #c03939;
+}
+
+#courseTableBody button:last-child:hover {
+    background-color: #c03939;
+    color: white;
+}
+
+/* =========================
+   POPUP / MODAL
+========================= */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 480px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.flex h2 {
+    font-size: 22px;
+    color: #172b4d;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.formField label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #425675;
+    margin-bottom: 8px;
+}
+
+.formField input {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #d5dce8;
+    border-radius: 7px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.formField input:focus {
+    border-color: #315cba;
+    box-shadow: 0 0 0 3px rgba(49, 92, 186, 0.12);
+}
+
+.formField input::placeholder {
+    color: #a0aaba;
+}
+
+.formField button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* =========================
+   BACKGROUND OVERLAY
+========================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 27, 47, 0.65);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+}
+
+/* =========================
+   HIDDEN ELEMENTS
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 23px 20px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    main {
+        margin: 30px auto;
+        padding: 0 12px;
+        overflow-x: auto;
+    }
+
+    #mainTable {
+        min-width: 600px;
+    }
+
+    #mainTable th,
+    #mainTable td {
+        padding: 13px 12px;
+    }
+
+    .modal {
+        padding: 22px;
+    }
+}
