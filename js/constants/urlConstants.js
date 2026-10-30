@@ -9,7 +9,7 @@ const coursePath = "courses"
 
 //getting the urls
 const getCoursesURL =  `${domain}/${coursePath}`;
-const getCourse = getCoursesURL;
-const createCourse = getCoursesURL;
-const deleteCourse = getCoursesURL;
-const updateCourse = getCoursesURL
+const getCourseURL = getCoursesURL;
+const createCourseURL = getCoursesURL;
+const deleteCourseURL = getCoursesURL;
+const updateCourseURL = getCoursesURL
