@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Directory</title>
+</head>
+<body>
+    <header>
+        <h1>Course Directory</h1>
+    </header>
+    <main>
+<!--        Main table that will be changing all the time-->
+        <table id="mainTable">
+            <thead id="headerSection">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th>Amount of Students</th>
+                </tr>
+            </thead>
+            <tbody id="bodySection"></tbody>
+        </table>
+        <div class="action_bar">
+            <button class="btn btn-open">Add a course</button>
+        </div>
+    </main>
+<!--    creating a new crouse-->
+    <section id="newCourseSection" class="modal hidden">
+        <div class="flex">
+            <h2 id="popupTitle">Add Course</h2>
+            <button class="btn-close">⨉</button>
+        </div>
+        <div>
+            <form id="courseForm" action="#">
+                <input type="hidden" id="courseId"/>
+                <div class="formField">
+                    <label for="courseName">Course Name</label>
+                    <input type="text" id="courseName" placeholder="Enter name" required/>
+                </div>
+                <div class="formField">
+                    <label for="courseNumber">Course number</label>
+                    <input type="number" id="courseNumber" placeholder="Enter number" required/>
+                </div>
+                <div class="formField">
+                    <label for="studentNumber">Number of Students</label>
+                    <input type="number" id="studentNumber" placeholder="Enter number of available students for course" required/>
+                </div>
+                <div class="formField">
+                    <button class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="overlay hidden"></div>
+</body>
+</html>
