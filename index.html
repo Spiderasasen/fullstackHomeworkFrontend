@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Directory</title>
+    <script src="js/constants/urlConstants.js"></script>
+    <script src="js/models/classes.js"></script>
+    <script src="js/services/services.js"></script>
+    <script src="js/views/views.js"></script>
+    <script>
+        addEventListener("DOMContentLoaded", (event) => {loadCourses()})
+    </script>
 </head>
 <body>
     <header>
@@ -18,9 +25,10 @@
                     <th>Name</th>
                     <th>Number</th>
                     <th>Amount of Students</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
-            <tbody id="bodySection"></tbody>
+            <tbody id="courseTableBody"></tbody>
         </table>
         <div class="action_bar">
             <button class="btn btn-open">Add a course</button>
